@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#210b29">
+
+<title>Happy Birthday ANKITA ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #180820, #49143f, #210b29);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 14px;
+  text-align: center;
+}
+
+#confetti {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -50px;
+  color: #ff82bd;
+  opacity: 0.7;
+  animation: floatUp linear infinite;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 22px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 28px;
+  background: rgba(255,255,255,.09);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 45px rgba(255, 75, 160, .16);
+  animation: appear 1.2s ease-out;
+}
+
+.top-label {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: rgba(255, 125, 189, .15);
+  color: #ffc1df;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  line-height: 1.15;
+  color: #fff0f7;
+  text-shadow: 0 0 22px rgba(255, 105, 180, .5);
+}
+
+.name {
+  display: block;
+  margin-top: 8px;
+  color: #ff8ac7;
+  overflow-wrap: anywhere;
+  animation: glow 2s infinite alternate;
+}
+
+.subtitle {
+  margin-top: 16px;
+  font-size: 16px;
+  color: #ffd8eb;
+}
+
+.cake {
+  font-size: clamp(75px, 21vw, 105px);
+  margin: 22px 0;
+  animation: bounce 2s infinite ease-in-out;
+  filter: drop-shadow(0 0 18px rgba(255, 115, 190, .5));
+}
+
+.love-note {
+  padding: 20px 16px;
+  margin: 15px 0 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 175, 220, .15);
+}
+
+.love-note h2 {
+  color: #ffacd6;
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.love-note p {
+  color: #fff0f7;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.signature {
+  color: #ff9dcf;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+button {
+  width: 100%;
+  max-width: 310px;
+  min-height: 52px;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff5da8, #ff9bcb, #ffd0a8);
+  color: #4a1235;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 25px rgba(255, 70, 155, .3);
+  transition: transform .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+.footer {
+  margin-top: 22px;
+  color: #d6afd0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff70b9; }
+  to { text-shadow: 0 0 30px #ff4da6, 0 0 45px #c77dff; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  10% { opacity: .65; }
+  90% { opacity: .55; }
+  100% { transform: translateY(-115vh) rotate(35deg); opacity: 0; }
+}
+
+@media (max-width: 380px) {
+  .card { padding: 25px 15px; }
+  .love-note { padding: 17px 12px; }
+  .love-note p { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<main class="card">
+
+  <div class="top-label">💗 MY FAVORITE PERSON 💗</div>
+
+  <h1>
+    Happy Birthday
+    <span class="name">ANKITA ❤️</span>
+  </h1>
+
+  <p class="subtitle">
+    To the girl who makes my world more beautiful ✨
+  </p>
+
+  <div class="cake" role="img" aria-label="Birthday cake">🎂</div>
+
+  <div class="love-note">
+    <h2>To My Beautiful Girl 💕</h2>
+
+    <p>
+      Happy Birthday, my love, ANKITA! ❤️
+      <br><br>
+      You are one of the most beautiful parts of my life.
+      Your smile makes my day brighter, your happiness
+      means the world to me, and every moment with you
+      feels special.
+      <br><br>
+      On your special day, I wish you endless happiness,
+      lots of love, success in everything you do, and
+      countless reasons to smile.
+      <br><br>
+      No matter what life brings, I hope you always
+      remember how precious and special you are to me.
+      You deserve all the beautiful things in this world.
+      <br><br>
+      Keep smiling, keep shining, and keep being the
+      wonderful girl you are. I hope I can make you feel
+      as loved today as you make me feel every day. 💖
+    </p>
+
+    <div class="signature">
+      Forever sending you love and hugs 🫶
+    </div>
+  </div>
+
+  <button id="celebrateBtn" type="button">
+    🎉 Tap Here, Birthday Princess! 🎉
+  </button>
+
+  <div class="footer">
+    Made with ❤️ just for ANKITA
+    <br>
+    You are my favorite notification, my sweetest thought,
+    and my happiest feeling. 💌
+  </div>
+
+</main>
+
+<script>
+// ❤️ Floating hearts
+const heartsContainer = document.getElementById("hearts");
+const heartSymbols = ["❤️", "💕", "💗", "💖", "💘", "♥"];
+
+for (let i = 0; i < 18; i++) {
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent =
+    heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.fontSize = (14 + Math.random() * 22) + "px";
+  heart.style.animationDuration = (8 + Math.random() * 10) + "s";
+  heart.style.animationDelay = (-Math.random() * 15) + "s";
+
+  heartsContainer.appendChild(heart);
+}
+
+// 🎊 Confetti animation - no external library
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+let animationId = null;
+let width = 0;
+let height = 0;
+
+const colors = [
+  "#ff5da8", "#ffd166", "#c77dff",
+  "#7cf5d2", "#ffffff", "#ff8b6a"
+];
+
+function resizeCanvas() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  width = window.innerWidth;
+  height = window.innerHeight;
+
+  canvas.width = Math.round(width * dpr);
+  canvas.height = Math.round(height * dpr);
+  canvas.style.width = width + "px";
+  canvas.style.height = height + "px";
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function burst(count = 180) {
+  const originX = width / 2;
+  const originY = height * 0.4;
+
+  for (let i = 0; i < count; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 2 + Math.random() * 7;
+
+    particles.push({
+      x: originX,
+      y: originY,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 2,
+      gravity: 0.09 + Math.random() * 0.1,
+      size: 3 + Math.random() * 6,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rotation: Math.random() * 360,
+      spin: (Math.random() - 0.5) * 12,
+      life: 100 + Math.random() * 60
+    });
+  }
+
+  // Prevent excessive particle counts on phones.
+  if (particles.length > 600) {
+    particles = particles.slice(-600);
+  }
+
+  if (!animationId) {
+    animate();
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+
+  particles = particles.filter(p => p.life > 0);
+
+  for (const p of particles) {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += p.gravity;
+    p.vx *= 0.992;
+    p.rotation += p.spin;
+    p.life--;
+
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation * Math.PI / 180);
+    ctx.globalAlpha = Math.min(1, p.life / 25);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(-p.size / 2, -p.size / 2,
+                 p.size, p.size * 0.65);
+    ctx.restore();
+  }
+
+  if (particles.length > 0) {
+    animationId = requestAnimationFrame(animate);
+  } else {
+    ctx.clearRect(0, 0, width, height);
+    animationId = null;
+  }
+}
+
+// 🎉 Birthday celebration button
+document.getElementById("celebrateBtn").addEventListener("click", () => {
+  burst(220);
+
+  setTimeout(() => burst(100), 250);
+
+  const button = document.getElementById("celebrateBtn");
+  button.textContent = "💖 ANKITA, YOU ARE SO SPECIAL! 💖";
+
+  if (navigator.vibrate) {
+    navigator.vibrate(80);
+  }
+});
+
+// 🎂 Automatic confetti when the website opens
+window.addEventListener("load", () => {
+  setTimeout(() => burst(160), 500);
+  setTimeout(() => burst(100), 1200);
+});
+</script>
+
+</body>
+</html>
